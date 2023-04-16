@@ -16,7 +16,7 @@ public class main extends Canvas implements ActionListener, KeyListener{
 	
 	Timer tm = new Timer(5, this); 
 	
-	double x = 0, y = 0, xvel = 0, yvel = 0;
+	double x = 120, y = 100, xvel = 0, yvel = 0;
  
 	
 	
@@ -31,6 +31,10 @@ public class main extends Canvas implements ActionListener, KeyListener{
 		f.setSize(500, 500); 
 		
 		f.setVisible(true); 
+
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		m.second();
 	
 	} 
 	
@@ -50,12 +54,12 @@ public class main extends Canvas implements ActionListener, KeyListener{
 		
 		Toolkit t = Toolkit.getDefaultToolkit();
 		Image i = t.getImage("Breadfish.gif");
-		g.drawImage(i, 120, 100, this);
+		g.drawImage(i, (int)x, (int)y, this);
 	
 	} 
 	
 	public void actionPerformed(ActionEvent e){ 
-		
+
 		repaint(); 
 		
 		x += xvel; 
